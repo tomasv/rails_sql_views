@@ -6,6 +6,10 @@ module RailsSqlViews
         true
       end
       
+      def supports_drop_table_cascade?
+        false
+      end
+      
       def base_tables(name = nil) #:nodoc:
         tables = []
         cursor = execute("SELECT TABLE_NAME FROM USER_TABLES", name)
